@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Biodata | Muhammad Rayhan Rizky Pratama</title>
-  <meta
-    name="description"
-    content="Biodata diri Muhammad Rayhan Rizky Pratama"
-  >
 
-  <!-- Menyimpan pilihan tema -->
+<meta
+name="description"
+content="Biodata diri Muhammad Rayhan Rizky Pratama"
+
+>
+
+  <!-- Memuat tema yang tersimpan -->
 
   <script>
     try {
@@ -71,32 +73,36 @@
     rel="stylesheet"
   >
 
-  <!-- CSS -->
+  <!-- CSS utama -->
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="font-body text-t3 antialiased min-h-screen">
 
-  <!-- Tombol tema -->
+  <!-- =====================================
+       TOMBOL DARK / LIGHT MODE
+  ====================================== -->
 
 <button
 class="sosial fixed right-4 top-4 z-10"
 aria-label="Ganti tema gelap/terang"
 onclick="
-const t = document.documentElement.classList.toggle('terang');
-try {
-localStorage.tema = t ? 'terang' : 'gelap';
-} catch {}
+const t =
+document.documentElement.classList.toggle('terang');
+
+```
+  try {
+    localStorage.tema =
+      t ? 'terang' : 'gelap';
+  } catch {}
 "
+```
 
 >
 
 ```
-<!-- Matahari -->
-```
-
-```
+<!-- Icon matahari -->
 <svg
   class="i-matahari"
   viewBox="0 0 24 24"
@@ -107,6 +113,7 @@ localStorage.tema = t ? 'terang' : 'gelap';
   stroke-linejoin="round"
 >
   <circle cx="12" cy="12" r="4"/>
+
   <path d="
     M12 2v2
     M12 20v2
@@ -119,7 +126,8 @@ localStorage.tema = t ? 'terang' : 'gelap';
   "/>
 </svg>
 
-<!-- Bulan -->
+
+<!-- Icon bulan -->
 <svg
   class="i-bulan"
   viewBox="0 0 24 24"
@@ -129,30 +137,49 @@ localStorage.tema = t ? 'terang' : 'gelap';
   stroke-linecap="round"
   stroke-linejoin="round"
 >
-  <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+  <path d="
+    M21 12.8
+    A9 9 0 1 1 11.2 3
+    a7 7 0 0 0 9.8 9.8z
+  "/>
 </svg>
 ```
 
   </button>
 
-  <!-- Konten utama -->
+  <!-- =====================================
+       KONTEN UTAMA
+  ====================================== -->
 
-  <main class="mx-auto flex max-w-2xl flex-col items-center px-5 py-14 sm:py-20">
+  <main
+    class="mx-auto flex max-w-2xl flex-col items-center px-5 py-14 sm:py-20"
+  >
 
 ```
-<!-- ==================== PROFIL ==================== -->
+<!-- =====================================
+     PROFIL
+====================================== -->
+
 <header class="flex flex-col items-center text-center">
+
+
+  <!-- Lingkaran foto -->
 
   <div class="relative h-40 w-40 sm:h-48 sm:w-48">
 
-    <!-- Cincin neon -->
+    <!-- Cincin biru neon -->
     <div class="ring absolute inset-0 rounded-full"></div>
 
+
+    <!-- FOTO PROFIL -->
+
     <!--
-      FOTO PROFIL
-      Ganti file "foto-profil.jpg"
-      jika ingin menggunakan foto lain.
+      Letakkan foto dengan nama:
+      foto-profil.jpg
+
+      di folder yang sama dengan index.html
     -->
+
     <img
       src="image.jpg"
       alt="Foto profil Muhammad Rayhan Rizky Pratama"
@@ -161,149 +188,265 @@ localStorage.tema = t ? 'terang' : 'gelap';
 
   </div>
 
+
+  <!-- Nama -->
+
   <h1
     class="glow-text mt-8 bg-gradient-to-r from-neon to-volt bg-clip-text font-display text-3xl font-extrabold leading-tight tracking-tight text-transparent sm:text-5xl"
   >
     Muhammad Rayhan Rizky Pratama
   </h1>
 
-  <p class="mt-2 font-display text-base font-semibold text-hi sm:text-lg">
+
+  <!-- Sekolah -->
+
+  <p
+    class="mt-2 font-display text-base font-semibold text-hi sm:text-lg"
+  >
     SMA GUNUNG MADU
   </p>
 
 </header>
 
 
-<!-- ==================== TENTANG SAYA ==================== -->
+
+<!-- =====================================
+     TENTANG SAYA
+====================================== -->
+
 <section
   class="mt-14 w-full"
   aria-labelledby="tentang"
 >
-  <h2 id="tentang" class="judul">
+
+  <h2
+    id="tentang"
+    class="judul"
+  >
     Tentang saya
   </h2>
 
+
   <p class="mt-4 leading-relaxed text-t4">
-    Saya adalah salah satu siswa kelas XII yang mengambil mata pelajaran
-    CIT Tingkat Lanjut. Saya pernah ikut organisasi di sekolah, yaitu SRC
-    atau yang biasa dikenal dengan OSIS. Saya juga pernah mengikuti Lomba
-    Line Follower yang diadakan di event tahunan
+
+    Saya adalah salah satu siswa kelas XII yang mengambil
+    mata pelajaran CIT Tingkat Lanjut.
+
+    Saya pernah ikut organisasi di sekolah, yaitu SRC atau
+    yang biasa dikenal dengan OSIS.
+
+    Saya juga pernah mengikuti Lomba Line Follower yang
+    diadakan di event tahunan
+
     <strong class="font-bold text-hi">
       SPASF 2026
     </strong>.
+
   </p>
+
 </section>
 
 
-<!-- ==================== DETAIL PRIBADI ==================== -->
+
+<!-- =====================================
+     DETAIL PRIBADI
+====================================== -->
+
 <section
   class="mt-12 w-full"
   aria-labelledby="detail"
 >
-  <h2 id="detail" class="judul">
+
+  <h2
+    id="detail"
+    class="judul"
+  >
     Detail pribadi
   </h2>
 
-  <div class="glow-box mt-4 overflow-hidden rounded-2xl bg-panel/70">
 
-    <table class="w-full text-left text-sm sm:text-base">
-      <tbody class="divide-y divide-neon/10">
+  <div
+    class="glow-box mt-4 overflow-hidden rounded-2xl bg-panel/70"
+  >
+
+    <table
+      class="w-full text-left text-sm sm:text-base"
+    >
+
+      <tbody
+        class="divide-y divide-neon/10"
+      >
+
+
+        <!-- Nama -->
 
         <tr>
-          <th scope="row" class="label w-2/5 sm:w-1/3">
+
+          <th
+            scope="row"
+            class="label w-2/5 sm:w-1/3"
+          >
             Nama
           </th>
 
           <td class="nilai">
             Muhammad Rayhan Rizky Pratama
           </td>
+
         </tr>
 
+
+        <!-- Tempat lahir -->
+
         <tr>
-          <th scope="row" class="label">
+
+          <th
+            scope="row"
+            class="label"
+          >
             Tempat, tanggal lahir
           </th>
 
           <td class="nilai">
             Poncowati, 13 Juli 2009
           </td>
+
         </tr>
 
+
+        <!-- Alamat -->
+
         <tr>
-          <th scope="row" class="label">
+
+          <th
+            scope="row"
+            class="label"
+          >
             Alamat
           </th>
 
           <td class="nilai">
             Jl. Melati, Perumahan 2
           </td>
+
         </tr>
 
+
+        <!-- Email -->
+
         <tr>
-          <th scope="row" class="label">
+
+          <th
+            scope="row"
+            class="label"
+          >
             Email
           </th>
 
           <td class="nilai break-all">
+
             <a
               href="mailto:rayhanrizkypratama276@gmail.com"
               class="tautan"
             >
               rayhanrizkypratama276@gmail.com
             </a>
+
           </td>
+
         </tr>
 
+
+        <!-- Nomor HP -->
+
         <tr>
-          <th scope="row" class="label">
+
+          <th
+            scope="row"
+            class="label"
+          >
             No. HP
           </th>
 
           <td class="nilai">
+
             <a
               href="tel:+6282269018007"
               class="tautan"
             >
               0822-6901-8007
             </a>
+
           </td>
+
         </tr>
 
+
+        <!-- Prestasi -->
+
         <tr>
-          <th scope="row" class="label">
+
+          <th
+            scope="row"
+            class="label"
+          >
             Prestasi
           </th>
 
           <td class="nilai">
-            Menjadi pasukan pengibar bendera di PT Gunung Madu 2026
+
+            Menjadi pasukan pengibar bendera
+            di PT Gunung Madu 2026
+
             <br>
+
             Mencapai rank
+
             <strong class="font-bold text-hi">
               Grand Master
             </strong>
+
             di game Free Fire
+
           </td>
+
         </tr>
 
+
       </tbody>
+
     </table>
 
   </div>
+
 </section>
 
 
-<!-- ==================== HOBI ==================== -->
+
+<!-- =====================================
+     HOBI
+====================================== -->
+
 <section
   class="mt-12 w-full"
   aria-labelledby="hobi"
 >
-  <h2 id="hobi" class="judul">
+
+  <h2
+    id="hobi"
+    class="judul"
+  >
     Hobi
   </h2>
 
+
   <ul class="mt-4 flex flex-wrap gap-2.5">
 
+
+    <!-- Mancing -->
+
     <li>
+
       <button
         class="badge"
         onclick="foto(
@@ -314,9 +457,14 @@ localStorage.tema = t ? 'terang' : 'gelap';
       >
         Mancing
       </button>
+
     </li>
 
+
+    <!-- Berlari -->
+
     <li>
+
       <button
         class="badge"
         onclick="foto(
@@ -327,9 +475,14 @@ localStorage.tema = t ? 'terang' : 'gelap';
       >
         Berlari
       </button>
+
     </li>
 
+
+    <!-- Bermain game -->
+
     <li>
+
       <button
         class="badge"
         onclick="foto(
@@ -340,13 +493,20 @@ localStorage.tema = t ? 'terang' : 'gelap';
       >
         Bermain game
       </button>
+
     </li>
 
+
   </ul>
+
 </section>
 
 
-<!-- ==================== FOOTER ==================== -->
+
+<!-- =====================================
+     FOOTER / SOSIAL MEDIA
+====================================== -->
+
 <footer
   class="mt-16 flex w-full flex-col items-center border-t border-neon/10 pt-10"
 >
@@ -355,9 +515,12 @@ localStorage.tema = t ? 'terang' : 'gelap';
     Terhubung dengan saya
   </p>
 
+
   <div class="mt-5 flex gap-4">
 
-    <!-- Instagram -->
+
+    <!-- INSTAGRAM -->
+
     <a
       href="https://www.instagram.com/xxraayynnn?stkn=M3VhMXFIZBkMDJo"
       target="_blank"
@@ -365,6 +528,7 @@ localStorage.tema = t ? 'terang' : 'gelap';
       aria-label="Instagram"
       class="sosial"
     >
+
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -373,19 +537,36 @@ localStorage.tema = t ? 'terang' : 'gelap';
         stroke-linecap="round"
         stroke-linejoin="round"
       >
-        <rect x="3" y="3" width="18" height="18" rx="5"/>
-        <circle cx="12" cy="12" r="4"/>
+
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+        />
+
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        />
+
         <circle
           cx="17.5"
           cy="6.5"
           r="0.8"
           fill="currentColor"
         />
+
       </svg>
+
     </a>
 
 
-    <!-- WhatsApp -->
+
+    <!-- WHATSAPP -->
+
     <a
       href="https://wa.me/6282269018007"
       target="_blank"
@@ -393,16 +574,45 @@ localStorage.tema = t ? 'terang' : 'gelap';
       aria-label="WhatsApp"
       class="sosial"
     >
+
       <svg
         viewBox="0 0 24 24"
         fill="currentColor"
       >
-        <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.8a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88zm8.41-18.3A11.8 11.8 0 0 0 12.05 0C5.5.0.16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/>
+
+        <path d="
+          M17.47 14.38
+          c-.3-.15-1.76-.87-2.03-.97
+          -.27-.1-.47-.15-.67.15
+          -.2.3-.77.97-.94 1.16
+          -.17.2-.35.22-.64.07
+          -.3-.15-1.26-.46-2.39-1.48
+          -.88-.79-1.48-1.76-1.65-2.06
+          -.17-.3-.02-.46.13-.6
+          .13-.14.3-.35.45-.52
+          .15-.17.2-.3.3-.5
+          .1-.2.05-.37-.03-.52
+          -.07-.15-.67-1.61-.92-2.2
+          -.24-.58-.49-.5-.67-.51
+          h-.57c-.2 0-.52.07-.79.37
+          -.27.3-1.04 1.02-1.04 2.48
+          s1.07 2.88 1.21 3.07
+          c.15.2 2.1 3.2 5.08 4.49
+          .71.3 1.26.49 1.7.63
+          .71.23 1.36.2 1.87.12
+          .57-.08 1.76-.72 2-1.41
+          .25-.7.25-1.29.17-1.41
+          -.07-.13-.27-.2-.57-.35z
+        "/>
+
       </svg>
+
     </a>
 
 
-    <!-- GitHub -->
+
+    <!-- GITHUB -->
+
     <a
       href="https://github.com/Rayhan33"
       target="_blank"
@@ -410,16 +620,44 @@ localStorage.tema = t ? 'terang' : 'gelap';
       aria-label="GitHub"
       class="sosial"
     >
+
       <svg
         viewBox="0 0 24 24"
         fill="currentColor"
       >
-        <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/>
+
+        <path d="
+          M12 .5
+          a11.5 11.5 0 0 0-3.64 22.41
+          c.58.1.79-.25.79-.56v-2
+          c-3.2.7-3.87-1.36-3.87-1.36
+          -.52-1.33-1.28-1.68-1.28-1.68
+          -1.04-.71.08-.7.08-.7
+          1.15.08 1.76 1.19 1.76 1.19
+          1.03 1.76 2.69 1.25 3.35.96
+          .1-.75.4-1.25.73-1.54
+          -2.55-.29-5.24-1.28-5.24-5.69
+          0-1.26.45-2.29 1.19-3.1
+          -.12-.29-.52-1.46.11-3.05
+          0 0 .97-.31 3.17 1.18
+          a11 11 0 0 1 5.77 0
+          c2.2-1.49 3.17-1.18 3.17-1.18
+          .63 1.59.23 2.76.11 3.05
+          .74.81 1.19 1.84 1.19 3.1
+          0 4.42-2.69 5.39-5.25 5.68
+          .41.36.78 1.06.78 2.14v3.17
+          c0 .31.21.67.8.56
+          A11.5 11.5 0 0 0 12 .5z
+        "/>
+
       </svg>
+
     </a>
 
 
-    <!-- Email -->
+
+    <!-- EMAIL -->
+
     <a
       href="https://mail.google.com/mail/?view=cm&fs=1&to=rayhanrizkypratama276@gmail.com"
       target="_blank"
@@ -427,6 +665,7 @@ localStorage.tema = t ? 'terang' : 'gelap';
       aria-label="Email"
       class="sosial"
     >
+
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -435,6 +674,7 @@ localStorage.tema = t ? 'terang' : 'gelap';
         stroke-linecap="round"
         stroke-linejoin="round"
       >
+
         <rect
           x="3"
           y="5"
@@ -442,11 +682,15 @@ localStorage.tema = t ? 'terang' : 'gelap';
           height="14"
           rx="2"
         />
+
         <path d="m3 7 9 6 9-6"/>
+
       </svg>
+
     </a>
 
   </div>
+
 
   <p class="mt-10 text-xs text-t6">
     &copy; 2026 Muhammad Rayhan Rizky Pratama
@@ -457,19 +701,22 @@ localStorage.tema = t ? 'terang' : 'gelap';
 
   </main>
 
-  <!-- ==================== MODAL FOTO HOBI ==================== -->
+  <!-- =====================================
+       MODAL FOTO HOBI
+  ====================================== -->
 
   <dialog
     id="dlg"
     class="glow-box m-auto max-w-[92vw] rounded-2xl border border-neon/40 bg-panel p-2 backdrop:bg-black/70"
   >
-    <img
-      id="img"
-      alt=""
-      class="max-h-[80vh] max-w-full rounded-xl"
-    >
 
 ```
+<img
+  id="img"
+  alt=""
+  class="max-h-[80vh] max-w-full rounded-xl"
+>
+
 <a
   id="lnk"
   target="_blank"
@@ -482,25 +729,45 @@ localStorage.tema = t ? 'terang' : 'gelap';
 
   </dialog>
 
-  <!-- JavaScript -->
+  <!-- =====================================
+       JAVASCRIPT
+  ====================================== -->
 
   <script>
-    const dlg = document.getElementById("dlg");
-    const img = document.getElementById("img");
-    const lnk = document.getElementById("lnk");
+
+    const dlg =
+      document.getElementById("dlg");
+
+    const img =
+      document.getElementById("img");
+
+    const lnk =
+      document.getElementById("lnk");
+
 
     function foto(src, alt, url) {
+
       img.src = src;
+
       img.alt = alt;
+
       lnk.href = url;
+
       dlg.showModal();
+
     }
 
+
     dlg.onclick = (e) => {
+
       if (!e.target.closest("a")) {
+
         dlg.close();
+
       }
+
     };
+
   </script>
 
 </body>
