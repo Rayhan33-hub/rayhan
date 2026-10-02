@@ -1,0 +1,760 @@
+```css
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ==================================================
+   ROOT
+================================================== */
+
+:root {
+  --ink: #030816;
+  --panel: #07122a;
+
+  --neon: #00e5ff;
+  --blue: #008cff;
+  --volt: #0066ff;
+
+  --text: #f4fbff;
+  --muted: #8ea8c7;
+
+  --border: rgba(0, 229, 255, 0.22);
+  --glow: rgba(0, 229, 255, 0.22);
+}
+
+
+/* ==================================================
+   BODY
+================================================== */
+
+body {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(0, 102, 255, 0.16),
+      transparent 35%
+    ),
+    var(--ink);
+
+  color: var(--text);
+
+  font-family:
+    "IBM Plex Sans",
+    sans-serif;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+
+  padding: 40px 20px;
+}
+
+
+/* ==================================================
+   LIGHT MODE
+================================================== */
+
+body.light {
+
+  --ink: #eef8ff;
+  --panel: #ffffff;
+
+  --neon: #0084ff;
+  --blue: #006cff;
+  --volt: #004cff;
+
+  --text: #071426;
+  --muted: #52657d;
+
+  --border: rgba(0, 108, 255, 0.20);
+  --glow: rgba(0, 108, 255, 0.16);
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(0, 132, 255, 0.12),
+      transparent 40%
+    ),
+    var(--ink);
+}
+
+
+/* ==================================================
+   CONTAINER
+================================================== */
+
+.container {
+  width: min(100%, 900px);
+  margin: auto;
+}
+
+
+/* ==================================================
+   THEME BUTTON
+================================================== */
+
+.theme-toggle {
+  position: fixed;
+
+  top: 20px;
+  right: 20px;
+
+  z-index: 100;
+
+  border: 1px solid var(--border);
+
+  background:
+    rgba(7, 18, 42, 0.8);
+
+  color: var(--neon);
+
+  padding: 10px 15px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  box-shadow:
+    0 0 15px var(--glow);
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 10px var(--neon),
+    0 0 30px var(--glow);
+}
+
+
+/* ==================================================
+   PROFILE
+================================================== */
+
+.profile {
+  text-align: center;
+
+  margin-bottom: 45px;
+}
+
+.profile h1 {
+  margin-top: 25px;
+
+  font-family:
+    "Sora",
+    sans-serif;
+
+  font-size: clamp(28px, 5vw, 46px);
+
+  font-weight: 800;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--neon),
+      var(--blue),
+      #ffffff
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 25px var(--glow);
+}
+
+.school {
+  margin-top: 8px;
+
+  color: var(--muted);
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+
+/* ==================================================
+   PROFILE IMAGE
+================================================== */
+
+.profile-image-wrapper {
+
+  position: relative;
+
+  width: 190px;
+  height: 190px;
+
+  margin: auto;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.ring {
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      from 0deg,
+      #00e5ff,
+      #008cff,
+      #0066ff,
+      #00e5ff,
+      #00bfff,
+      #0066ff,
+      #00e5ff
+    );
+
+  animation:
+    spin 6s linear infinite;
+
+  filter:
+    drop-shadow(0 0 7px #00e5ff)
+    drop-shadow(0 0 18px #008cff)
+    drop-shadow(
+      0 0 32px
+      rgba(0, 229, 255, 0.65)
+    );
+}
+
+.profile-image {
+
+  position: absolute;
+
+  inset: 5px;
+
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 4px solid var(--ink);
+
+  z-index: 2;
+}
+
+
+@keyframes spin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* ==================================================
+   CARD
+================================================== */
+
+.card {
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(7, 18, 42, 0.95),
+      rgba(3, 8, 22, 0.9)
+    );
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 22px;
+
+  padding: 30px;
+
+  margin-bottom: 25px;
+
+  box-shadow:
+    0 0 25px rgba(0, 102, 255, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+body.light .card {
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+}
+
+.card:hover {
+
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(0, 229, 255, 0.45);
+
+  box-shadow:
+    0 0 20px var(--glow),
+    0 15px 40px rgba(0, 102, 255, 0.08);
+}
+
+
+/* ==================================================
+   HEADINGS
+================================================== */
+
+.card h2 {
+
+  font-family:
+    "Sora",
+    sans-serif;
+
+  font-size: 22px;
+
+  margin-bottom: 20px;
+
+  color: var(--neon);
+
+  text-shadow:
+    0 0 12px var(--glow);
+}
+
+.card p {
+
+  color: var(--muted);
+
+  line-height: 1.8;
+
+}
+
+
+/* ==================================================
+   DATA LIST
+================================================== */
+
+.data-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.data-item {
+
+  display: grid;
+
+  grid-template-columns:
+    200px 1fr;
+
+  gap: 15px;
+
+  padding: 14px 0;
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+.data-item:last-child {
+  border-bottom: none;
+}
+
+.data-item span {
+
+  color: var(--neon);
+
+  font-weight: 600;
+}
+
+.data-item strong {
+
+  color: var(--text);
+
+  font-weight: 500;
+}
+
+
+/* ==================================================
+   PRESTASI
+================================================== */
+
+.achievement {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.achievement-item {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 15px;
+
+  padding: 16px;
+
+  border-radius: 15px;
+
+  background:
+    rgba(0, 102, 255, 0.06);
+
+  border:
+    1px solid var(--border);
+}
+
+.achievement-item p {
+  margin: 0;
+}
+
+.number {
+
+  min-width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--neon),
+      var(--blue)
+    );
+
+  color: #00101c;
+
+  font-weight: 800;
+}
+
+
+/* ==================================================
+   HOBBY
+================================================== */
+
+.hobby-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+}
+
+.hobby {
+
+  min-height: 120px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 18px;
+
+  background:
+    rgba(0, 102, 255, 0.06);
+
+  color: var(--text);
+
+  cursor: pointer;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  transition: 0.3s ease;
+}
+
+.hobby span {
+
+  font-size: 34px;
+}
+
+.hobby strong {
+
+  color: var(--neon);
+
+}
+
+.hobby:hover {
+
+  transform:
+    translateY(-5px)
+    scale(1.02);
+
+  border-color:
+    var(--neon);
+
+  box-shadow:
+    0 0 25px var(--glow);
+}
+
+
+/* ==================================================
+   SOCIAL MEDIA
+================================================== */
+
+.social-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 15px;
+}
+
+.social {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 55px;
+
+  text-decoration: none;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 14px;
+
+  color: var(--text);
+
+  background:
+    rgba(0, 102, 255, 0.05);
+
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.social:hover {
+
+  transform:
+    translateY(-3px);
+
+  border-color:
+    var(--neon);
+
+  color:
+    var(--neon);
+
+  box-shadow:
+    0 0 20px var(--glow);
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+
+  text-align: center;
+
+  margin-top: 40px;
+
+  color: var(--muted);
+
+  line-height: 1.8;
+
+  font-size: 14px;
+}
+
+
+/* ==================================================
+   MODAL
+================================================== */
+
+dialog {
+
+  border: none;
+
+  padding: 0;
+
+  background: transparent;
+
+  margin: auto;
+}
+
+dialog::backdrop {
+
+  background:
+    rgba(0, 0, 0, 0.8);
+
+  backdrop-filter:
+    blur(8px);
+}
+
+.modal-content {
+
+  position: relative;
+
+  width: min(90vw, 700px);
+
+  padding: 15px;
+
+  border-radius: 20px;
+
+  background:
+    var(--panel);
+
+  border:
+    1px solid var(--border);
+
+  box-shadow:
+    0 0 50px var(--glow);
+
+  text-align: center;
+}
+
+.modal-content img {
+
+  width: 100%;
+
+  max-height: 70vh;
+
+  object-fit: contain;
+
+  border-radius: 14px;
+}
+
+.modal-content h3 {
+
+  margin-top: 15px;
+
+  color: var(--neon);
+
+  font-family:
+    "Sora",
+    sans-serif;
+}
+
+.close-modal {
+
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  width: 38px;
+  height: 38px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 0, 0, 0.7);
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  z-index: 5;
+}
+
+.close-modal:hover {
+
+  background:
+    var(--neon);
+
+  color:
+    #00101c;
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 700px) {
+
+  body {
+    padding: 30px 15px;
+  }
+
+  .profile-image-wrapper {
+    width: 155px;
+    height: 155px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .data-item {
+
+    grid-template-columns: 1fr;
+
+    gap: 5px;
+
+  }
+
+  .hobby-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .social-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .theme-toggle {
+
+    top: 12px;
+    right: 12px;
+
+    padding: 8px 12px;
+
+  }
+
+}
+```
