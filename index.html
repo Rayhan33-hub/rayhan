@@ -1,774 +1,329 @@
+```html
 <!DOCTYPE html>
-
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Biodata | Muhammad Rayhan Rizky Pratama</title>
-
-<meta
-name="description"
-content="Biodata diri Muhammad Rayhan Rizky Pratama"
-
->
-
-  <!-- Memuat tema yang tersimpan -->
-
-  <script>
-    try {
-      if (localStorage.tema === "terang") {
-        document.documentElement.classList.add("terang");
-      }
-    } catch {}
-  </script>
-
-  <!-- Tailwind CSS -->
-
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <script>
-    const w = (n) => `rgb(var(--${n}) / <alpha-value>)`;
-
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: Object.fromEntries(
-            "ink panel neon volt on hi t2 t3 t4 t5 t6"
-              .split(" ")
-              .map((n) => [n, w(n)])
-          ),
-
-          fontFamily: {
-            display: [
-              "Sora",
-              "ui-sans-serif",
-              "system-ui",
-              "sans-serif"
-            ],
-
-            body: [
-              "IBM Plex Sans",
-              "ui-sans-serif",
-              "system-ui",
-              "sans-serif"
-            ]
-          }
-        }
-      }
-    };
-  </script>
-
-  <!-- Google Fonts -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
+  <meta
+    name="description"
+    content="Biodata diri Muhammad Rayhan Rizky Pratama"
   >
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Sora:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
-  <!-- CSS utama -->
-
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="font-body text-t3 antialiased min-h-screen">
+<body>
 
-  <!-- =====================================
-       TOMBOL DARK / LIGHT MODE
-  ====================================== -->
-
-<button
-class="sosial fixed right-4 top-4 z-10"
-aria-label="Ganti tema gelap/terang"
-onclick="
-const t =
-document.documentElement.classList.toggle('terang');
-
-```
-  try {
-    localStorage.tema =
-      t ? 'terang' : 'gelap';
-  } catch {}
-"
-```
-
->
-
-```
-<!-- Icon matahari -->
-<svg
-  class="i-matahari"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="4"/>
-
-  <path d="
-    M12 2v2
-    M12 20v2
-    M4.9 4.9l1.4 1.4
-    M17.7 17.7l1.4 1.4
-    M2 12h2
-    M20 12h2
-    M4.9 19.1l1.4-1.4
-    M17.7 6.3l1.4-1.4
-  "/>
-</svg>
-
-
-<!-- Icon bulan -->
-<svg
-  class="i-bulan"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="
-    M21 12.8
-    A9 9 0 1 1 11.2 3
-    a7 7 0 0 0 9.8 9.8z
-  "/>
-</svg>
-```
-
+  <!-- Tombol Tema -->
+  <button id="themeToggle" class="theme-toggle" type="button">
+    ☀️ / 🌙
   </button>
 
-  <!-- =====================================
-       KONTEN UTAMA
-  ====================================== -->
+  <main class="container">
 
-  <main
-    class="mx-auto flex max-w-2xl flex-col items-center px-5 py-14 sm:py-20"
-  >
+    <!-- ================= PROFILE ================= -->
+    <header class="profile">
 
-```
-<!-- =====================================
-     PROFIL
-====================================== -->
+      <div class="profile-image-wrapper">
+        <div class="ring"></div>
 
-<header class="flex flex-col items-center text-center">
+        <img
+          src="foto-profil.jpg"
+          alt="Foto profil Muhammad Rayhan Rizky Pratama"
+          class="profile-image"
+        >
+      </div>
 
+      <h1>Muhammad Rayhan Rizky Pratama</h1>
 
-  <!-- Lingkaran foto -->
+      <p class="school">
+        SMA GUNUNG MADU
+      </p>
 
-  <div class="relative h-40 w-40 sm:h-48 sm:w-48">
-
-    <!-- Cincin biru neon -->
-    <div class="ring absolute inset-0 rounded-full"></div>
-
-
-    <!-- FOTO PROFIL -->
-
-    <!--
-      Letakkan foto dengan nama:
-      foto-profil.jpg
-
-      di folder yang sama dengan index.html
-    -->
-
-    <img
-      src="image.jpg"
-      alt="Foto profil Muhammad Rayhan Rizky Pratama"
-      class="absolute inset-[5px] h-[calc(100%-10px)] w-[calc(100%-10px)] rounded-full border-4 border-ink object-cover"
-    >
-
-  </div>
+    </header>
 
 
-  <!-- Nama -->
+    <!-- ================= TENTANG SAYA ================= -->
+    <section class="card">
 
-  <h1
-    class="glow-text mt-8 bg-gradient-to-r from-neon to-volt bg-clip-text font-display text-3xl font-extrabold leading-tight tracking-tight text-transparent sm:text-5xl"
-  >
-    Muhammad Rayhan Rizky Pratama
-  </h1>
+      <h2>Tentang Saya</h2>
 
+      <p>
+        Saya adalah salah satu siswa kelas XII yang mengambil mata pelajaran
+        CIT Tingkat Lanjut. Saya pernah ikut organisasi di sekolah, yaitu SRC
+        atau yang biasa dikenal dengan OSIS. Saya juga pernah mengikuti Lomba
+        Line Follower yang diadakan di event tahunan SPASF 2026.
+      </p>
 
-  <!-- Sekolah -->
-
-  <p
-    class="mt-2 font-display text-base font-semibold text-hi sm:text-lg"
-  >
-    SMA GUNUNG MADU
-  </p>
-
-</header>
+    </section>
 
 
+    <!-- ================= DATA DIRI ================= -->
+    <section class="card">
 
-<!-- =====================================
-     TENTANG SAYA
-====================================== -->
+      <h2>Data Diri</h2>
 
-<section
-  class="mt-14 w-full"
-  aria-labelledby="tentang"
->
+      <div class="data-list">
 
-  <h2
-    id="tentang"
-    class="judul"
-  >
-    Tentang saya
-  </h2>
+        <div class="data-item">
+          <span>Nama</span>
+          <strong>Muhammad Rayhan Rizky Pratama</strong>
+        </div>
 
+        <div class="data-item">
+          <span>Tempat, Tanggal Lahir</span>
+          <strong>Poncowati, 13 Juli 2009</strong>
+        </div>
 
-  <p class="mt-4 leading-relaxed text-t4">
+        <div class="data-item">
+          <span>Alamat</span>
+          <strong>Jl. Melati, Perumahan 2</strong>
+        </div>
 
-    Saya adalah salah satu siswa kelas XII yang mengambil
-    mata pelajaran CIT Tingkat Lanjut.
+        <div class="data-item">
+          <span>Email</span>
+          <strong>rayhanrizkypratama276@gmail.com</strong>
+        </div>
 
-    Saya pernah ikut organisasi di sekolah, yaitu SRC atau
-    yang biasa dikenal dengan OSIS.
+        <div class="data-item">
+          <span>No. HP</span>
+          <strong>0822-6901-8007</strong>
+        </div>
 
-    Saya juga pernah mengikuti Lomba Line Follower yang
-    diadakan di event tahunan
+      </div>
 
-    <strong class="font-bold text-hi">
-      SPASF 2026
-    </strong>.
-
-  </p>
-
-</section>
-
+    </section>
 
 
-<!-- =====================================
-     DETAIL PRIBADI
-====================================== -->
+    <!-- ================= PRESTASI ================= -->
+    <section class="card">
 
-<section
-  class="mt-12 w-full"
-  aria-labelledby="detail"
->
+      <h2>Prestasi</h2>
 
-  <h2
-    id="detail"
-    class="judul"
-  >
-    Detail pribadi
-  </h2>
+      <div class="achievement">
 
+        <div class="achievement-item">
+          <span class="number">01</span>
+          <p>
+            Menjadi pasukan pengibar bendera di PT Gunung Madu 2026.
+          </p>
+        </div>
 
-  <div
-    class="glow-box mt-4 overflow-hidden rounded-2xl bg-panel/70"
-  >
+        <div class="achievement-item">
+          <span class="number">02</span>
+          <p>
+            Mencapai rank Grand Master di game Free Fire.
+          </p>
+        </div>
 
-    <table
-      class="w-full text-left text-sm sm:text-base"
-    >
+      </div>
 
-      <tbody
-        class="divide-y divide-neon/10"
-      >
+    </section>
 
 
-        <!-- Nama -->
+    <!-- ================= HOBI ================= -->
+    <section class="card">
 
-        <tr>
+      <h2>Hobi</h2>
 
-          <th
-            scope="row"
-            class="label w-2/5 sm:w-1/3"
-          >
-            Nama
-          </th>
+      <div class="hobby-grid">
 
-          <td class="nilai">
-            Muhammad Rayhan Rizky Pratama
-          </td>
+        <button
+          class="hobby"
+          onclick="openPhoto('IMG_20260728_164709_838.jpg', 'Mancing')"
+        >
+          <span>🎣</span>
+          <strong>Mancing</strong>
+        </button>
 
-        </tr>
+        <button
+          class="hobby"
+          onclick="openPhoto('IMG_20260426_064535_058.jpg', 'Berlari')"
+        >
+          <span>🏃</span>
+          <strong>Berlari</strong>
+        </button>
+
+        <button
+          class="hobby"
+          onclick="openPhoto('IMG_20260616_231348_471.jpg', 'Bermain Game')"
+        >
+          <span>🎮</span>
+          <strong>Bermain Game</strong>
+        </button>
+
+      </div>
+
+    </section>
 
 
-        <!-- Tempat lahir -->
+    <!-- ================= SOSIAL MEDIA ================= -->
+    <section class="card">
 
-        <tr>
+      <h2>Kontak & Sosial Media</h2>
 
-          <th
-            scope="row"
-            class="label"
-          >
-            Tempat, tanggal lahir
-          </th>
+      <div class="social-grid">
 
-          <td class="nilai">
-            Poncowati, 13 Juli 2009
-          </td>
+        <!-- Instagram -->
+        <a
+          href="https://www.instagram.com/xxraayynnn?stkn=M3VhMXFIZBkMDJo"
+          target="_blank"
+          class="social instagram"
+        >
+          <span>Instagram</span>
+        </a>
 
-        </tr>
+        <!-- WhatsApp -->
+        <a
+          href="https://wa.me/6282269018007"
+          target="_blank"
+          class="social whatsapp"
+        >
+          <span>WhatsApp</span>
+        </a>
 
-
-        <!-- Alamat -->
-
-        <tr>
-
-          <th
-            scope="row"
-            class="label"
-          >
-            Alamat
-          </th>
-
-          <td class="nilai">
-            Jl. Melati, Perumahan 2
-          </td>
-
-        </tr>
-
+        <!-- GitHub -->
+        <a
+          href="https://github.com/Rayhan33"
+          target="_blank"
+          class="social github"
+        >
+          <span>GitHub</span>
+        </a>
 
         <!-- Email -->
-
-        <tr>
-
-          <th
-            scope="row"
-            class="label"
-          >
-            Email
-          </th>
-
-          <td class="nilai break-all">
-
-            <a
-              href="mailto:rayhanrizkypratama276@gmail.com"
-              class="tautan"
-            >
-              rayhanrizkypratama276@gmail.com
-            </a>
-
-          </td>
-
-        </tr>
-
-
-        <!-- Nomor HP -->
-
-        <tr>
-
-          <th
-            scope="row"
-            class="label"
-          >
-            No. HP
-          </th>
-
-          <td class="nilai">
-
-            <a
-              href="tel:+6282269018007"
-              class="tautan"
-            >
-              0822-6901-8007
-            </a>
-
-          </td>
-
-        </tr>
-
-
-        <!-- Prestasi -->
-
-        <tr>
-
-          <th
-            scope="row"
-            class="label"
-          >
-            Prestasi
-          </th>
-
-          <td class="nilai">
-
-            Menjadi pasukan pengibar bendera
-            di PT Gunung Madu 2026
-
-            <br>
-
-            Mencapai rank
-
-            <strong class="font-bold text-hi">
-              Grand Master
-            </strong>
-
-            di game Free Fire
-
-          </td>
-
-        </tr>
-
-
-      </tbody>
-
-    </table>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================
-     HOBI
-====================================== -->
-
-<section
-  class="mt-12 w-full"
-  aria-labelledby="hobi"
->
-
-  <h2
-    id="hobi"
-    class="judul"
-  >
-    Hobi
-  </h2>
-
-
-  <ul class="mt-4 flex flex-wrap gap-2.5">
-
-
-    <!-- Mancing -->
-
-    <li>
-
-      <button
-        class="badge"
-        onclick="foto(
-          'IMG_20260728_164709_838.jpg',
-          'Mancing',
-          'https://share.google/EkkMNrJ3ZPdDdbGoZ'
-        )"
-      >
-        Mancing
-      </button>
-
-    </li>
-
-
-    <!-- Berlari -->
-
-    <li>
-
-      <button
-        class="badge"
-        onclick="foto(
-          'IMG_20260426_064535_058.jpg',
-          'Berlari',
-          'https://share.google/1rvQJLKARE6Vn89Ru'
-        )"
-      >
-        Berlari
-      </button>
-
-    </li>
-
-
-    <!-- Bermain game -->
-
-    <li>
-
-      <button
-        class="badge"
-        onclick="foto(
-          'IMG_20260616_231348_471.jpg',
-          'Bermain game',
-          'https://share.google/wYjyHpUoWQOq7p9tq'
-        )"
-      >
-        Bermain game
-      </button>
-
-    </li>
-
-
-  </ul>
-
-</section>
-
-
-
-<!-- =====================================
-     FOOTER / SOSIAL MEDIA
-====================================== -->
-
-<footer
-  class="mt-16 flex w-full flex-col items-center border-t border-neon/10 pt-10"
->
-
-  <p class="text-sm text-t5">
-    Terhubung dengan saya
-  </p>
-
-
-  <div class="mt-5 flex gap-4">
-
-
-    <!-- INSTAGRAM -->
-
-    <a
-      href="https://www.instagram.com/xxraayynnn?stkn=M3VhMXFIZBkMDJo"
-      target="_blank"
-      rel="noopener"
-      aria-label="Instagram"
-      class="sosial"
-    >
-
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-
-        <rect
-          x="3"
-          y="3"
-          width="18"
-          height="18"
-          rx="5"
-        />
-
-        <circle
-          cx="12"
-          cy="12"
-          r="4"
-        />
-
-        <circle
-          cx="17.5"
-          cy="6.5"
-          r="0.8"
-          fill="currentColor"
-        />
-
-      </svg>
-
-    </a>
-
-
-
-    <!-- WHATSAPP -->
-
-    <a
-      href="https://wa.me/6282269018007"
-      target="_blank"
-      rel="noopener"
-      aria-label="WhatsApp"
-      class="sosial"
-    >
-
-      <svg
-        viewBox="0 0 24 24"
-        fill="currentColor"
-      >
-
-        <path d="
-          M17.47 14.38
-          c-.3-.15-1.76-.87-2.03-.97
-          -.27-.1-.47-.15-.67.15
-          -.2.3-.77.97-.94 1.16
-          -.17.2-.35.22-.64.07
-          -.3-.15-1.26-.46-2.39-1.48
-          -.88-.79-1.48-1.76-1.65-2.06
-          -.17-.3-.02-.46.13-.6
-          .13-.14.3-.35.45-.52
-          .15-.17.2-.3.3-.5
-          .1-.2.05-.37-.03-.52
-          -.07-.15-.67-1.61-.92-2.2
-          -.24-.58-.49-.5-.67-.51
-          h-.57c-.2 0-.52.07-.79.37
-          -.27.3-1.04 1.02-1.04 2.48
-          s1.07 2.88 1.21 3.07
-          c.15.2 2.1 3.2 5.08 4.49
-          .71.3 1.26.49 1.7.63
-          .71.23 1.36.2 1.87.12
-          .57-.08 1.76-.72 2-1.41
-          .25-.7.25-1.29.17-1.41
-          -.07-.13-.27-.2-.57-.35z
-        "/>
-
-      </svg>
-
-    </a>
-
-
-
-    <!-- GITHUB -->
-
-    <a
-      href="https://github.com/Rayhan33"
-      target="_blank"
-      rel="noopener"
-      aria-label="GitHub"
-      class="sosial"
-    >
-
-      <svg
-        viewBox="0 0 24 24"
-        fill="currentColor"
-      >
-
-        <path d="
-          M12 .5
-          a11.5 11.5 0 0 0-3.64 22.41
-          c.58.1.79-.25.79-.56v-2
-          c-3.2.7-3.87-1.36-3.87-1.36
-          -.52-1.33-1.28-1.68-1.28-1.68
-          -1.04-.71.08-.7.08-.7
-          1.15.08 1.76 1.19 1.76 1.19
-          1.03 1.76 2.69 1.25 3.35.96
-          .1-.75.4-1.25.73-1.54
-          -2.55-.29-5.24-1.28-5.24-5.69
-          0-1.26.45-2.29 1.19-3.1
-          -.12-.29-.52-1.46.11-3.05
-          0 0 .97-.31 3.17 1.18
-          a11 11 0 0 1 5.77 0
-          c2.2-1.49 3.17-1.18 3.17-1.18
-          .63 1.59.23 2.76.11 3.05
-          .74.81 1.19 1.84 1.19 3.1
-          0 4.42-2.69 5.39-5.25 5.68
-          .41.36.78 1.06.78 2.14v3.17
-          c0 .31.21.67.8.56
-          A11.5 11.5 0 0 0 12 .5z
-        "/>
-
-      </svg>
-
-    </a>
-
-
-
-    <!-- EMAIL -->
-
-    <a
-      href="https://mail.google.com/mail/?view=cm&fs=1&to=rayhanrizkypratama276@gmail.com"
-      target="_blank"
-      rel="noopener"
-      aria-label="Email"
-      class="sosial"
-    >
-
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-
-        <rect
-          x="3"
-          y="5"
-          width="18"
-          height="14"
-          rx="2"
-        />
-
-        <path d="m3 7 9 6 9-6"/>
-
-      </svg>
-
-    </a>
-
-  </div>
-
-
-  <p class="mt-10 text-xs text-t6">
-    &copy; 2026 Muhammad Rayhan Rizky Pratama
-  </p>
-
-</footer>
-```
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=rayhanrizkypratama276@gmail.com"
+          target="_blank"
+          class="social email"
+        >
+          <span>Email</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <p>
+        © 2026 Muhammad Rayhan Rizky Pratama
+      </p>
+
+      <p>
+        SMA GUNUNG MADU
+      </p>
+    </footer>
 
   </main>
 
-  <!-- =====================================
-       MODAL FOTO HOBI
-  ====================================== -->
 
-  <dialog
-    id="dlg"
-    class="glow-box m-auto max-w-[92vw] rounded-2xl border border-neon/40 bg-panel p-2 backdrop:bg-black/70"
-  >
+  <!-- ================= MODAL FOTO ================= -->
+  <dialog id="photoModal">
 
-```
-<img
-  id="img"
-  alt=""
-  class="max-h-[80vh] max-w-full rounded-xl"
->
+    <div class="modal-content">
 
-<a
-  id="lnk"
-  target="_blank"
-  rel="noopener"
-  class="badge mt-2 block text-center"
->
-  Buka tautan
-</a>
-```
+      <button
+        class="close-modal"
+        onclick="closePhoto()"
+        type="button"
+      >
+        ✕
+      </button>
+
+      <img id="modalImage" src="" alt="Foto hobi">
+
+      <h3 id="modalTitle"></h3>
+
+    </div>
 
   </dialog>
 
-  <!-- =====================================
-       JAVASCRIPT
-  ====================================== -->
 
+  <!-- ================= JAVASCRIPT ================= -->
   <script>
 
-    const dlg =
-      document.getElementById("dlg");
+    // ================= TEMA =================
 
-    const img =
-      document.getElementById("img");
+    const themeToggle = document.getElementById("themeToggle");
 
-    const lnk =
-      document.getElementById("lnk");
+    themeToggle.addEventListener("click", () => {
+
+      document.body.classList.toggle("light");
+
+      localStorage.setItem(
+        "tema",
+        document.body.classList.contains("light")
+          ? "light"
+          : "dark"
+      );
+
+    });
 
 
-    function foto(src, alt, url) {
+    // Memuat tema sebelumnya
+    if (localStorage.getItem("tema") === "light") {
+      document.body.classList.add("light");
+    }
 
-      img.src = src;
 
-      img.alt = alt;
+    // ================= MODAL FOTO =================
 
-      lnk.href = url;
+    const photoModal = document.getElementById("photoModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalTitle = document.getElementById("modalTitle");
 
-      dlg.showModal();
+
+    function openPhoto(image, title) {
+
+      modalImage.src = image;
+      modalTitle.textContent = title;
+
+      photoModal.showModal();
 
     }
 
 
-    dlg.onclick = (e) => {
+    function closePhoto() {
 
-      if (!e.target.closest("a")) {
+      photoModal.close();
 
-        dlg.close();
+    }
+
+
+    // Tutup modal jika klik area luar
+    photoModal.addEventListener("click", (event) => {
+
+      const rect = photoModal.getBoundingClientRect();
+
+      if (
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom
+      ) {
+
+        photoModal.close();
 
       }
 
-    };
+    });
 
   </script>
 
 </body>
 </html>
+```
